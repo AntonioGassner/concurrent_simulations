@@ -15,11 +15,15 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-foxy-turtle-tf2-py \
     ros-foxy-tf2-tools \
     ros-foxy-tf-transformations \
-    xterm \
-    libasio-dev \
     ros-foxy-ros2bag \
     ros-foxy-rosbag2-converter-default-plugins \
     ros-foxy-rosbag2-storage-default-plugins \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install --no-install-recommends -y \    
+    sqlite3 \
+    xterm \
+    libasio-dev \
     && rm -rf /var/lib/apt/lists/*
     
 RUN pip install transformations    
