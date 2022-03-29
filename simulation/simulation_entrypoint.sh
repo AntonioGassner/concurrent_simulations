@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /home/robomaker/dev_ws
+source /home/robomaker/dev_ws/install/setup.bash
 source /opt/ros/foxy/setup.bash
 source /usr/share/gazebo-11/setup.sh
 source ./install/setup.sh

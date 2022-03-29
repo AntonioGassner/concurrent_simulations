@@ -64,7 +64,7 @@ RUN apt-get update && apt-get install -y gazebo11
 ARG USERNAME=robomaker
 RUN groupadd $USERNAME
 RUN useradd -ms /bin/bash -g $USERNAME $USERNAME
-RUN sh -c 'echo "$USERNAME ALL=(root) NOPASSWD:ALL" >> /etc/sudoers'
+RUN sh -c 'sudo echo "$USERNAME ALL=(root) NOPASSWD:ALL" >> /etc/sudoers'
 USER $USERNAME
 
 RUN sh -c 'cd /home/$USERNAME'
