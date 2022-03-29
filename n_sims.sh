@@ -19,7 +19,7 @@ network_id=1
 
 while [ "$i" -le "$n" ]
 do 
-	(trap 'kill 0' SIGINT; docker run -d --network network_"$network_id" --rm -v simulation_log_"$i":/home/robomaker/my_logs --name sim_"$i" -u robomaker -e ROBOMAKER_GAZEBO_MASTER_URI=http://localhost:"$port1" agriculture_simulation )
+	(trap 'kill 0' SIGINT; docker run -d --network network_"$network_id" --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v simulation_log_"$i":/home/robomaker/dev_ws/logged_files --name sim_"$i" -u robomaker -e ROBOMAKER_GAZEBO_MASTER_URI=http://localhost:"$port1" agriculture_simulation )
 	port1=$(("port1"+1))
 	i=$(("i"+1))
 	network_id=$(("network_id"+1))
