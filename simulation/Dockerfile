@@ -1,4 +1,4 @@
-FROM base_image_v1.2
+FROM base_image
 
 #Just a gimmick to change code and not have it ignored when building image
 RUN echo 'v9.9'
