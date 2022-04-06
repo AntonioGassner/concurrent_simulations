@@ -5,5 +5,5 @@ cd ~/concurrent_simulations/base_image
 sudo docker build -t base_image .
 cd ..
 cd simulation
-sudo docker build -t simulation .
+sudo docker build -t agriculture_simulation .
 
